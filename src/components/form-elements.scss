@@ -1,0 +1,125 @@
+@use './vars';
+
+.stage-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    > h1 {
+        color: vars.$marine-blue;
+        font-size: 38px;
+    }
+    > p {
+        color: vars.$cool-gray;
+        font-size: 20px;
+    }
+}
+
+label {
+    color: vars.$marine-blue;
+    font-weight: 500;
+}
+
+input {
+    border: 1px solid vars.$light-gray;
+    border-radius: 6px;
+    height: 53px;
+    outline: none;
+    padding: 0 16px;
+    font-size: 18px;
+    color: vars.$marine-blue;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    transition: border 100ms ease-in-out;
+}
+
+input:focus {
+    border: 1px solid vars.$purplish-blue;
+}
+
+input[data-error="true"] {
+    border: 1px solid vars.$strawberry-red;
+}
+
+.form-error-message {
+    color: vars.$strawberry-red;
+    font-weight: 700;
+}
+
+.button-next {
+    width: 160px;
+    border: none;
+    outline: none;
+    background-color: vars.$marine-blue;
+    color: vars.$alabaster;
+    font-size: 20px;
+    padding: 1rem 0;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 150ms ease-in-out;
+}
+
+.button-next:hover {
+    background-color: #05479a;
+}
+
+.button-back {
+    color: vars.$cool-gray;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    padding: 1rem 0;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    transition: color 150ms ease-in-out;
+}
+
+.button-back:hover {
+    color: vars.$marine-blue;
+}
+
+.switch {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    display: none;
+}
+
+.switch-label {
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+    background-color: vars.$marine-blue;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+.switch-label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+.switch:checked + .switch-label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+input.custom-checkbox {
+    width: 25px;
+    height: 25px;
+}
+
+input.custom-checkbox:checked {
+    accent-color: vars.$purplish-blue;
+}

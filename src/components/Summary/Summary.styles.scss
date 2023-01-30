@@ -1,0 +1,127 @@
+@use '../vars';
+
+.summary {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 6.5rem 4rem 9rem;
+    opacity: 0;
+    gap: 30px;
+
+    &__elements {
+        background-color: #f8f9fe;
+        padding: 1.5rem 2rem;
+        border-radius: 8px;
+
+        &__planinfo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h2 {
+                font-size: 20px;
+                font-weight: 500;
+                color: vars.$marine-blue;
+            }
+
+            > div {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+
+                span {
+                    color: vars.$cool-gray;
+                    text-decoration: underline;
+                    font-weight: 500;
+                    font-size: 18px;
+                    cursor: pointer;
+                }
+
+                span:hover {
+                    color: vars.$purplish-blue;
+
+                }
+            }
+
+            > h3 {
+                color: vars.$marine-blue;
+                font-weight: 700;
+                font-size: 21px;
+            }
+        }
+
+        &__addons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            &-addon {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 18px;
+
+                p {
+                    color: vars.$cool-gray;
+                }
+
+                span {
+                    color: vars.$marine-blue;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    &__total {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2.5rem;
+
+        > h4 {
+            color: vars.$cool-gray;
+            font-weight: 400;
+            font-size: 17px;
+        }
+
+        > h5 {
+            font-size: 24px;
+            color: vars.$purplish-blue;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 110px;
+
+        > button.button-next {
+            background-color: vars.$purplish-blue;
+        }
+        > button.button-next:hover {
+            background-color: #6f68da;
+        }
+    }
+}
+
+.horizontal-line {
+    width: 100%;
+    border-bottom: 1px solid vars.$light-gray;
+    margin: 25px 0 22px 0;
+}
+
+@media (max-width: vars.$mobile-view) {
+    .summary {
+        padding: 4rem 3rem;
+
+        &__buttons {
+            position: absolute;
+            bottom: 20px;
+            width: 90%;
+            left: 5%;
+        }
+    }
+}

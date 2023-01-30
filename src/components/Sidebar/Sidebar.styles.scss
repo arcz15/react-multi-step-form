@@ -1,0 +1,85 @@
+@use '../vars';
+
+.top-bar {
+    display: none;
+}
+
+.sidebar {
+    min-width: 26%;
+    min-height: 100%;
+    background-image: url('../../assets/images/bg-sidebar-desktop.svg');
+    background-size: cover;
+    border-radius: 16px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 18px;
+
+    &__element {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        gap: 18px;
+
+        &-stage-number {
+            width: 42px;
+            height: 42px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: -1px;
+            color: #fff;
+            font-weight: 700;
+
+            &[data-active="true"] {
+                background-color: vars.$light-blue;
+                border: 1px solid vars.$light-blue;
+                color: #000;
+            }
+        }
+
+        &-stage-info span {
+            color: vars.$cool-gray;
+        }
+
+        &-stage-info p {
+            color: vars.$alabaster;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+@media (max-width: vars.$mobile-view) {
+    .sidebar {
+        display: none;
+    }
+
+    .top-bar {
+        display: flex;
+        background-image: url('../../assets/images/bg-sidebar-mobile.svg');
+        background-size: cover;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 200px;
+        z-index: 0;
+        justify-content: center;
+        gap: 23px;
+
+        > div {
+            transform: translateY(100%);
+        }
+
+        > div[data-active="true"] {
+            background-color: vars.$light-blue;
+            border: 1px solid vars.$light-blue;
+            color: #000;
+        }
+    }
+}

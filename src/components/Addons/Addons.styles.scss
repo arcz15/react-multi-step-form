@@ -1,0 +1,83 @@
+@use '../vars';
+
+.addons {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 6.5rem 4rem 9rem;
+    gap: 40px;
+    opacity: 0;
+}
+
+.addons__form__elements {
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    &-element {
+        cursor: pointer;
+        width: 100%;
+        height: 105px;
+        display: flex;
+        align-items: center;
+        border: 1px solid vars.$cool-gray;
+        border-radius: 8px;
+        transition: all 150ms;
+        padding: 0 2rem;
+        gap: 30px;
+
+        * {
+            cursor: pointer;
+        }
+
+        > div {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            > h2 {
+                color: vars.$marine-blue;
+            }
+            > p {
+                color: vars.$cool-gray;
+                font-size: 18px;
+            }
+        }
+
+        > h3 {
+            color: vars.$purplish-blue;
+            font-weight: 400;
+        }
+
+        &:hover {
+            border: 1px solid vars.$marine-blue;
+        }
+    }
+
+    &-element[data-active="true"] {
+        border: 1px solid vars.$marine-blue;
+        background-color: rgba(71, 61, 255, 0.03);
+    }
+}
+
+.addons__form__buttons {
+    margin-top: 75px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: vars.$mobile-view) {
+    .addons {
+        padding: 4rem 3rem;
+
+        &__form__buttons {
+            position: absolute;
+            width: 90%;
+            left: 5%;
+            bottom: 20px;
+        }
+    }
+}

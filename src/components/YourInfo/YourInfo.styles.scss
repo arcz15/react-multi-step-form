@@ -1,0 +1,57 @@
+@use '../vars';
+
+.yourinfo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 6.5rem 4rem 9rem;
+    gap: 48px;
+    opacity: 0;
+
+    &__form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        &__element {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            &__labels {
+                display: flex;
+                justify-content: space-between;
+
+                span {
+                    color: vars.$strawberry-red;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        input {
+            width: 100%;
+        }
+
+        button {
+            align-self: flex-end;
+            margin-top: 95px;
+        }
+    }
+}
+
+@media (max-width: vars.$mobile-view) {
+    .yourinfo {
+        padding: 4rem 3rem;
+
+        &__form > button {
+            position: absolute;
+            bottom: 20px;
+            right: 55px;
+            z-index: 10;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+@use '../vars';
+
+.thankyou {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 9rem;
+    gap: 18px;
+
+    object {
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 36px;
+        color: vars.$marine-blue;
+    }
+
+    p {
+        text-align: center;
+        font-size: 20px;
+        color: vars.$cool-gray;
+    }
+}
+
+@media (max-width: vars.$mobile-view) {
+    .thankyou {
+        padding: 4rem;
+    }
+}
